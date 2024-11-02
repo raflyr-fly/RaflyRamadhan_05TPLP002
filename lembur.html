@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Informasi Manajemen Karyawan</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+  </head>
+  <body>
+    <!-- TopBar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+      <div class="container-fluid">
+        <!-- Left image/logo -->
+        <a class="navbar-brand ms-3" href="#">
+          <img src="image/UNPAM_logo1.png" alt="Logo" style="width: 60px; height: 40px" />
+          <span class="ms-2 fw-bold">Universitas Pamulang</span>
+        </a>
+
+        <!-- Right profile image -->
+        <div class="d-flex align-items-center me-3">
+          <img src="image/profil.jpg" alt="Profile" class="rounded-circle" style="width: 40px; height: 40px" />
+        </div>
+      </div>
+    </nav>
+
+    <div class="d-flex">
+      <!-- Sidebar -->
+      <div class="bg-white text-secondary p-3 sidebar" style="width: 250px; min-height: 100vh">
+        <!-- Profile Section -->
+        <div class="text-center mb-4">
+          <img src="image/pasfoto.png" alt="Admin Profile" class="profile-image mb-2" />
+          <h5 class="text-dark">Rafly Ramadhan</h5>
+          <p class="text-muted">Administrator</p>
+        </div>
+
+        <ul class="nav flex-column mt-4">
+          <li class="nav-item">
+            <a class="nav-link text-secondary d-flex align-items-center" href="index.html"> <i class="fa-solid fa-house-chimney me-2"></i> Dashboard </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary d-flex align-items-center" href="karyawan.html"> <i class="fas fa-users me-2"></i> Karyawan </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary d-flex align-items-center" href="jabatan.html"> <i class="fas fa-briefcase me-2"></i> Jabatan </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary d-flex align-items-center" href="divisi.html"> <i class="fas fa-building me-2"></i> Divisi </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary d-flex align-items-center" href="absensi.html"> <i class="fas fa-calendar-check me-2"></i> Absensi </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary d-flex align-items-center" href="izin.html"> <i class="fas fa-envelope-open me-2"></i> Izin </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary d-flex align-items-center" href="lembur.html"> <i class="fas fa-clock me-2"></i> Lembur </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-secondary d-flex align-items-center" href="slipgaji.html"> <i class="fa-solid fa-money-bill-wave"></i> Slip Gaji </a>
+          </li>
+        </ul>
+        <!-- Logout Button -->
+        <div style="position: absolute; bottom: -35px; width: 10%">
+          <a href="logout.html" class="btn btn-primary w-100 d-flex align-items-center justify-content-center" onclick="return confirmLogout();"> <i class="fas fa-sign-out-alt me-2"></i> Logout </a>
+        </div>
+      </div>
+
+      <!-- Main Content -->
+      <div class="main-content">
+        <div class="header">
+          <h1>Sistem Informasi Manajemen Karyawan</h1>
+          <p>Admin Dashboard</p>
+        </div>
+        <!-- Main Content -->
+        <div class="container-fluid p-4">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Daftar Lembur Karyawan</h2>
+            <button class="btn btn-primary" onclick="ubahStatus();">Ubah Status</button>
+          </div>
+
+          <!-- Search Bar -->
+          <div class="mb-3">
+            <input type="text" class="form-control" id="searchInput" placeholder="Search by Nama Karyawan" oninput="searchTable()" />
+          </div>
+
+          <!-- Position Data Table -->
+          <table class="table table-bordered table-hover mt-4" id="positionTable">
+            <thead>
+              <tr>
+                <th class="small-column">No</th>
+                <th>Nama Karyawan</th>
+                <th>Tanggal</th>
+                <th>Jam Lembur Mulai | Berakhir</th>
+                <th>Keperluan Lembur</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Data will be inserted here -->
+              <tr>
+                <td>1</td>
+                <td>Joko Susanto</td>
+                <td>2024-11-02</td>
+                <td>08:50:00 | 18:30:00</td>
+                <td>Lembur</td>
+                <td>Disetujui</td>
+              </tr>
+              <tr>
+                <td>2</td>
+                <td>Asep Sunandar</td>
+                <td>2024-11-02</td>
+                <td>08:50:30 | 19:00:00</td>
+                <td>Lembur</td>
+                <td>Disetujui</td>
+              </tr>
+              <tr>
+                <td>3</td>
+                <td>Robby Stanley</td>
+                <td>2024-11-02</td>
+                <td>07:10:15 | 19:40:00</td>
+                <td>Lembur</td>
+                <td>Disetujui</td>
+              </tr>
+              <tr>
+                <td>4</td>
+                <td>Sugandi</td>
+                <td>2024-11-02</td>
+                <td>10:30:09 | 20:30:00</td>
+                <td>Lembur</td>
+                <td>Disetujui</td>
+              </tr>
+              <tr>
+                <td>5</td>
+                <td>Rian Prakasha</td>
+                <td>2024-11-02</td>
+                <td>07:10:30 | 21:10:00</td>
+                <td>Lembur</td>
+                <td>Menunggu Konfirmasi</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Logout
+      function confirmLogout() {
+        return confirm("Apakah Anda yakin ingin keluar?");
+      }
+      //   SearchBar
+      function searchTable() {
+        const input = document.getElementById("searchInput");
+        const filter = input.value.toLowerCase();
+        const table = document.getElementById("positionTable");
+        const trs = table.getElementsByTagName("tr");
+
+        // Loop through all table rows (except the first, which is the header)
+        for (let i = 1; i < trs.length; i++) {
+          const tds = trs[i].getElementsByTagName("td");
+          let found = false;
+
+          // Loop through all cells in the row
+          for (let j = 1; j < tds.length; j++) {
+            if (tds[j].innerText.toLowerCase().indexOf(filter) > -1) {
+              found = true; // If the text matches the search input
+              break; // No need to check other cells
+            }
+          }
+
+          // Show or hide the row based on the search result
+          trs[i].style.display = found ? "" : "none";
+        }
+      }
+
+      function viewDetails(name) {
+        alert("Detail untuk: " + name); // Ganti dengan fungsi sebenarnya untuk melihat detail
+      }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

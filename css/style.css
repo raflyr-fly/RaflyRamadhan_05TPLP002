@@ -1,0 +1,115 @@
+.profile-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+/* Mengubah warna teks menjadi biru saat di-hover */
+.nav-link:hover {
+  color: white !important;
+}
+
+/* Main Content Styling */
+.main-content {
+  flex: 1;
+  background-color: #f4f6f9;
+  padding: 20px;
+}
+.sidebar {
+  width: 250px;
+  min-height: 100vh;
+  background-color: #343a40; /* Warna latar belakang gelap */
+  padding-top: 20px;
+}
+
+.sidebar .nav-link {
+  color: #adb5bd; /* Warna teks sidebar */
+  font-weight: 500;
+  padding: 10px 15px;
+  border-radius: 4px;
+}
+
+/* Warna dan efek saat dihover */
+.sidebar .nav-link:hover {
+  background-color: #495057;
+  color: #fff;
+}
+
+/* Warna dan efek saat diaktifkan */
+.sidebar .nav-link.active {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.sidebar i {
+  font-size: 1.2em;
+}
+
+.header {
+  background: linear-gradient(135deg, #0d6efd, #007bff);
+  color: white;
+  padding: 30px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.header p {
+  margin: 0;
+  font-size: 16px;
+}
+
+/* Dashboard Boxes */
+.dashboard-container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.info-box {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 150px;
+}
+
+.info-box .icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.info-box p {
+  margin: 5px 0;
+  font-size: 14px;
+}
+
+.info-box h2 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.info-blue {
+  color: #0d6efd;
+}
+
+.info-green {
+  color: #28a745;
+}
+
+.info-purple {
+  color: #6f42c1;
+}
+
+/* table no */
+.small-column {
+  width: 50px; /* Ganti dengan ukuran yang Anda inginkan */
+}
+.medium-column {
+  width: 110px; /* Ganti dengan ukuran yang Anda inginkan */
+}
